@@ -46,7 +46,7 @@ class _IntroPageState extends State<IntroPage> {
               ),
               SizedBox(height: 10),
               Text(
-                "FEEL FREE TO TRY OUT OUR MENU AND ORDER WHATEVER YOU WANT",
+                "FEEL FREE TO TRY OUR MENU AND ORDER WHATEVER YOU WANT",
                 textAlign: TextAlign.start,
                 style: GoogleFonts.dmSerifDisplay(
                   fontSize: 14,
