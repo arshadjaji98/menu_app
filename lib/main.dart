@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:menu_app/model/shop.dart';
 import 'package:menu_app/pages/cart.dart';
 import 'package:menu_app/pages/favourite.dart';
@@ -7,6 +8,8 @@ import 'package:menu_app/pages/menu_page.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
+  await Hive.initFlutter();
+  await Hive.openBox('favouriteBox');
   WidgetsFlutterBinding.ensureInitialized();
 
   runApp(
