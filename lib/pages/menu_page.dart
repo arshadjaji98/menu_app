@@ -4,6 +4,7 @@ import 'package:menu_app/components/button.dart';
 import 'package:menu_app/components/food_tile.dart';
 import 'package:menu_app/model/shop.dart';
 import 'package:menu_app/pages/discount.dart';
+import 'package:menu_app/pages/favourite.dart';
 import 'package:menu_app/pages/food_details.dart';
 import 'package:menu_app/pages/hot_this_week.dart';
 import 'package:menu_app/pages/top_dishes.dart';
@@ -19,6 +20,7 @@ class MenuPage extends StatefulWidget {
 
 class _MenuPageState extends State<MenuPage> {
   int? selectedFoodIndex;
+  Set<String> favoriteFoods = {};
   bool isFavorite = false;
 
   @override
@@ -97,7 +99,15 @@ class _MenuPageState extends State<MenuPage> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/favouritepage');
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => FavoriteScreen(
+                    favoriteFoods: favoriteFoods,
+                    allFoods: foodMenu,
+                  ),
+                ),
+              );
             },
             icon: Icon(Icons.favorite, color: Colors.red[900]),
           ),
@@ -356,13 +366,25 @@ class _MenuPageState extends State<MenuPage> {
                                   padding: EdgeInsets.zero,
                                   constraints: BoxConstraints(),
                                   icon: Icon(
-                                    isFavorite
+                                    favoriteFoods.contains(
+                                          foodMenu[selectedFoodIndex!].name,
+                                        )
                                         ? Icons.favorite
                                         : Icons.favorite_outline,
-                                    color: Colors.red[900],
                                     size: 24,
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    final foodName =
+                                        foodMenu[selectedFoodIndex!].name;
+                                    setState(() {
+                                      if (isFavorite) {
+                                        favoriteFoods.remove(foodName);
+                                      } else {
+                                        favoriteFoods.add(foodName);
+                                      }
+                                      isFavorite = !isFavorite;
+                                    });
+                                  },
                                 ),
                                 Container(
                                   width: 30,

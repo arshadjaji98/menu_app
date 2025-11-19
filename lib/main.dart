@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:menu_app/model/shop.dart';
 import 'package:menu_app/pages/cart.dart';
-import 'package:menu_app/pages/favourite.dart';
 import 'package:menu_app/pages/intro_page.dart';
 import 'package:menu_app/pages/menu_page.dart';
 import 'package:provider/provider.dart';
@@ -28,7 +27,6 @@ class MyApp extends StatelessWidget {
         '/intropage': (context) => IntroPage(),
         '/menupage': (context) => MenuPage(),
         '/cartpage': (context) => Cart(),
-        '/favouritepage': (context) => Favourite(),
       },
     );
   }
