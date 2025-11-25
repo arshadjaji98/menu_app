@@ -27,7 +27,7 @@ class _MenuPageState extends State<MenuPage> {
   Widget build(BuildContext context) {
     final shop = context.read<Shop>();
     final foodMenu = shop.foodMenu;
-
+    print("Parent favoriteFoods: $favoriteFoods");
     return Scaffold(
       drawer: Drawer(
         backgroundColor: Colors.grey[300],
@@ -48,10 +48,23 @@ class _MenuPageState extends State<MenuPage> {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.shopping_cart),
-              title: Text('Cart', style: GoogleFonts.dmSerifDisplay()),
+              leading: Icon(Icons.favorite),
+              title: Text('Favorite', style: GoogleFonts.dmSerifDisplay()),
               onTap: () {
-                Navigator.pushNamed(context, '/cartpage');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => FavoriteScreen(
+                      favoriteFoods: favoriteFoods,
+                      allFoods: foodMenu,
+                      onRemove: (name) {
+                        setState(() {
+                          favoriteFoods.remove(name);
+                        });
+                      },
+                    ),
+                  ),
+                );
               },
             ),
             ListTile(
@@ -99,17 +112,9 @@ class _MenuPageState extends State<MenuPage> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => FavoriteScreen(
-                    favoriteFoods: favoriteFoods,
-                    allFoods: foodMenu,
-                  ),
-                ),
-              );
+              Navigator.pushNamed(context, '/cartpage');
             },
-            icon: Icon(Icons.favorite, color: Colors.red[900]),
+            icon: Icon(Icons.shopping_cart, color: Colors.red[900]),
           ),
         ],
         elevation: 0,
@@ -149,7 +154,17 @@ class _MenuPageState extends State<MenuPage> {
                             ),
                           ),
                           SizedBox(height: 20),
-                          MyButton(text: "Checkout", onTap: () {}),
+                          MyButton(
+                            text: "Checkout",
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => HotThisWeek(),
+                                ),
+                              );
+                            },
+                          ),
                         ],
                       ),
                       Image.asset("asset/sushi (3).png", height: 100),
@@ -371,18 +386,17 @@ class _MenuPageState extends State<MenuPage> {
                                         )
                                         ? Icons.favorite
                                         : Icons.favorite_outline,
-                                    size: 24,
                                   ),
+
                                   onPressed: () {
                                     final foodName =
                                         foodMenu[selectedFoodIndex!].name;
                                     setState(() {
-                                      if (isFavorite) {
+                                      if (favoriteFoods.contains(foodName)) {
                                         favoriteFoods.remove(foodName);
                                       } else {
                                         favoriteFoods.add(foodName);
                                       }
-                                      isFavorite = !isFavorite;
                                     });
                                   },
                                 ),

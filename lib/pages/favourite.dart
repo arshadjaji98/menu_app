@@ -2,45 +2,115 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menu_app/model/food.dart';
 
-class FavoriteScreen extends StatelessWidget {
+class FavoriteScreen extends StatefulWidget {
   final Set<String> favoriteFoods;
+  final void Function(String) onRemove;
+
   final List<Food> allFoods;
 
   const FavoriteScreen({
     super.key,
     required this.favoriteFoods,
     required this.allFoods,
+    required this.onRemove,
   });
 
   @override
+  State<FavoriteScreen> createState() => _FavoriteScreenState();
+}
+
+class _FavoriteScreenState extends State<FavoriteScreen> {
+  @override
   Widget build(BuildContext context) {
-    // Filter the food list to only favorites
-    final favorites = allFoods
-        .where((food) => favoriteFoods.contains(food.name))
+    final favorites = widget.allFoods
+        .where((food) => widget.favoriteFoods.contains(food.name))
         .toList();
 
     return Scaffold(
+      backgroundColor: Colors.grey[100],
       appBar: AppBar(
-        title: Text("Favorites", style: GoogleFonts.dmSerifDisplay()),
+        foregroundColor: Colors.white,
+        title: Text(
+          "Favorites",
+          style: GoogleFonts.dmSerifDisplay(fontSize: 26, color: Colors.white),
+        ),
         backgroundColor: Colors.red[900],
+        centerTitle: true,
+        elevation: 4,
       ),
       body: favorites.isEmpty
           ? Center(
-              child: Text(
-                "No favorites yet!",
-                style: GoogleFonts.dmSerifDisplay(fontSize: 18),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.favorite_border, size: 80, color: Colors.red[900]),
+                  SizedBox(height: 16),
+                  Text(
+                    "No favorites yet",
+                    style: GoogleFonts.dmSerifDisplay(
+                      fontSize: 24,
+                      color: Colors.black87,
+                    ),
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    "Add some food to your favorites!",
+                    style: TextStyle(color: Colors.black54),
+                  ),
+                ],
               ),
             )
           : ListView.builder(
+              padding: EdgeInsets.all(16),
               itemCount: favorites.length,
               itemBuilder: (context, index) {
                 final food = favorites[index];
-                return Card(
-                  margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                return Container(
+                  margin: EdgeInsets.only(bottom: 16),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(16),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.05),
+                        blurRadius: 8,
+                        offset: Offset(0, 4),
+                      ),
+                    ],
+                  ),
                   child: ListTile(
-                    leading: Image.asset(food.imagePath, width: 50),
-                    title: Text(food.name, style: GoogleFonts.dmSerifDisplay()),
-                    subtitle: Text("\$${food.price}"),
+                    contentPadding: EdgeInsets.symmetric(
+                      vertical: 12,
+                      horizontal: 16,
+                    ),
+                    leading: ClipRRect(
+                      borderRadius: BorderRadius.circular(12),
+                      child: Image.asset(
+                        food.imagePath,
+                        width: 60,
+                        height: 60,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    title: Text(
+                      food.name,
+                      style: GoogleFonts.dmSerifDisplay(fontSize: 20),
+                    ),
+                    subtitle: Text(
+                      "\$${food.price}",
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    trailing: IconButton(
+                      onPressed: () {
+                        print("Before: ${widget.favoriteFoods}");
+                        widget.onRemove(food.name);
+                        print(
+                          "After (parent updated): ${widget.favoriteFoods}",
+                        );
+                        setState(() {});
+                      },
+                      icon: Icon(Icons.favorite, color: Colors.red[900]),
+                    ),
                   ),
                 );
               },
