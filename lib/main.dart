@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 void main() async {
   await Hive.initFlutter();
   await Hive.openBox('favouriteBox');
-  WidgetsFlutterBinding.ensureInitialized();
+   WidgetsFlutterBinding.ensureInitialized();
 
   runApp(
     ChangeNotifierProvider(create: (context) => Shop(), child: const MyApp()),
