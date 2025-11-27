@@ -34,6 +34,7 @@ class _DiscountState extends State<Discount> {
               "asset/dosa.png",
               "20% OFF",
             ),
+
             const SizedBox(height: 16),
             _buildDiscountCard(
               "Chicken Alfredo Pasta",
@@ -41,6 +42,7 @@ class _DiscountState extends State<Discount> {
               "asset/pot.png",
               "15% OFF",
             ),
+
             const SizedBox(height: 16),
             _buildDiscountCard(
               "BBQ Grill Platter",
@@ -48,6 +50,7 @@ class _DiscountState extends State<Discount> {
               "asset/rice.png",
               "30% OFF",
             ),
+
             const SizedBox(height: 16),
             _buildDiscountCard(
               "BBQ Grill Platter",
@@ -55,6 +58,7 @@ class _DiscountState extends State<Discount> {
               "asset/icecream.png",
               "30% OFF",
             ),
+
             const SizedBox(height: 16),
             _buildDiscountCard(
               "BBQ Grill Platter",
@@ -90,6 +94,13 @@ class _DiscountState extends State<Discount> {
               "asset/sushi (1).png",
               "30% OFF",
             ),
+            _buildDiscountCard(
+              "BBQ Grill Platter",
+              "35",
+              "asset/sushi (1).png",
+              "30% OFF",
+            ),
+            const SizedBox(height: 16),
           ],
         ),
       ),
