@@ -15,6 +15,7 @@ class _DiscountState extends State<Discount> {
       extendBodyBehindAppBar: true,
       backgroundColor: Colors.grey[50],
       appBar: AppBar(
+        foregroundColor: Colors.white,
         centerTitle: true,
         backgroundColor: Colors.teal[700],
         elevation: 0,
@@ -23,7 +24,6 @@ class _DiscountState extends State<Discount> {
           style: GoogleFonts.dmSerifDisplay(color: Colors.white, fontSize: 26),
         ),
       ),
-
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView(
