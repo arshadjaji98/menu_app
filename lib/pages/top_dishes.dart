@@ -58,7 +58,6 @@ class TopDishes extends StatelessWidget {
               ),
             ),
           ),
-
           SafeArea(
             child: Column(
               children: [
