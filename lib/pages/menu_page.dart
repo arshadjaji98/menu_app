@@ -221,50 +221,43 @@ class _MenuPageState extends State<MenuPage> {
                   ),
                 ),
                 SizedBox(height: 20),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      selectedFoodIndex = 1;
-                    });
-                  },
-                  child: Container(
-                    margin: EdgeInsets.only(left: 10, right: 10, top: 10),
-                    padding: EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      color: Colors.grey[100],
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Image.asset("asset/sushi.png", height: 60),
-                            SizedBox(width: 10),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Salmon Eggs ",
-                                  style: GoogleFonts.dmSerifDisplay(
-                                    fontSize: 18,
-                                  ),
+                Container(
+                  margin: EdgeInsets.only(left: 10, right: 10, top: 10),
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: Colors.grey[100],
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Image.asset("asset/sushi.png", height: 60),
+                          SizedBox(width: 10),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Salmon Eggs ",
+                                style: GoogleFonts.dmSerifDisplay(
+                                  fontSize: 18,
                                 ),
-                                Text(
-                                  "\$26",
-                                  style: TextStyle(color: Colors.grey[700]),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        Icon(
-                          Icons.favorite_outline,
-                          color: Colors.grey,
-                          size: 28,
-                        ),
-                      ],
-                    ),
+                              ),
+                              Text(
+                                "\$26",
+                                style: TextStyle(color: Colors.grey[700]),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Icon(
+                        Icons.favorite_outline,
+                        color: Colors.grey,
+                        size: 28,
+                      ),
+                    ],
                   ),
                 ),
                 GestureDetector(

@@ -19,6 +19,7 @@ class HotThisWeek extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.grey[50],
         appBar: AppBar(
+
           foregroundColor: Colors.white,
           title: Text(
             "Special Menu",

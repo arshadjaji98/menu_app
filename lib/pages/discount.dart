@@ -66,6 +66,7 @@ class _DiscountState extends State<Discount> {
               "asset/chicken.png",
               "30% OFF",
             ),
+
             const SizedBox(height: 16),
             _buildDiscountCard(
               "BBQ Grill Platter",

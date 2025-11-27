@@ -47,6 +47,14 @@ class TopDishes extends StatelessWidget {
           Positioned.fill(
             child: Image.asset('asset/background.jpg', fit: BoxFit.cover),
           ),
+
+          IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back, color: Colors.white, size: 30),
+          ),
+
           Positioned(
             top: 60,
             left: 20,
