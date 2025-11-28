@@ -15,24 +15,18 @@ class HotThisWeek extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return WebResponsive(
-      child: Scaffold(
-        backgroundColor: Colors.grey[50],
-        appBar: AppBar(
-
-          foregroundColor: Colors.white,
-          title: Text(
-            "Special Menu",
-            style: GoogleFonts.dmSerifDisplay(
-              fontSize: 28,
-              color: Colors.white,
-            ),
-          ),
-          backgroundColor: Colors.teal[700],
-          centerTitle: true,
-          elevation: 5,
+    return Scaffold(
+      backgroundColor: Colors.grey[50],
+      appBar: AppBar(
+        foregroundColor: Colors.white,
+        title: Text(
+          "Special Menu",
+          style: GoogleFonts.dmSerifDisplay(fontSize: 28, color: Colors.white),
         ),
-        body: ListView.builder(
+        backgroundColor: Colors.teal[700],
+      ),
+      body: WebResponsive(
+        child: ListView.builder(
           padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
           itemCount: specialFoods.length,
           itemBuilder: (context, index) {
@@ -55,13 +49,13 @@ class HotThisWeek extends StatelessWidget {
                     borderRadius: BorderRadius.circular(24),
                     child: Image.asset(
                       food.imagePath,
-                      height: 220,
-                      width: double.infinity,
+                      height: 160,
+                      width: 200,
                       fit: BoxFit.cover,
                     ),
                   ),
                   Container(
-                    height: 220,
+                    height: 160,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(24),
                       gradient: LinearGradient(
@@ -75,16 +69,16 @@ class HotThisWeek extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    bottom: 16,
-                    left: 16,
-                    right: 16,
+                    bottom: 50,
+                    left: 300,
+                    right: 40,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           food.name,
                           style: GoogleFonts.dmSerifDisplay(
-                            fontSize: 24,
+                            fontSize: 40,
                             color: Colors.white,
                             shadows: [
                               Shadow(
@@ -100,7 +94,7 @@ class HotThisWeek extends StatelessWidget {
                           "\$${food.price}",
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 30,
                             shadows: [
                               Shadow(
                                 color: Colors.black.withOpacity(0.7),
