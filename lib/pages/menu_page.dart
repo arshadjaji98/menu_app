@@ -67,6 +67,7 @@ class _MenuPageState extends State<MenuPage> {
                 );
               },
             ),
+
             ListTile(
               leading: Icon(Icons.local_fire_department),
               title: Text('Hot this week', style: GoogleFonts.dmSerifDisplay()),
@@ -240,9 +241,7 @@ class _MenuPageState extends State<MenuPage> {
                             children: [
                               Text(
                                 "Salmon Eggs ",
-                                style: GoogleFonts.dmSerifDisplay(
-                                  fontSize: 18,
-                                ),
+                                style: GoogleFonts.dmSerifDisplay(fontSize: 18),
                               ),
                               Text(
                                 "\$26",
