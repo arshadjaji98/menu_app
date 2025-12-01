@@ -23,7 +23,7 @@ class HotThisWeek extends StatelessWidget {
           "Special Menu",
           style: GoogleFonts.dmSerifDisplay(fontSize: 28, color: Colors.white),
         ),
-        backgroundColor: Colors.teal[700],
+        backgroundColor: Colors.red[400],
       ),
       body: WebResponsive(
         child: ListView.builder(
@@ -69,7 +69,7 @@ class HotThisWeek extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    bottom: 50,
+                    bottom: 25,
                     left: 300,
                     right: 40,
                     child: Column(
@@ -82,7 +82,7 @@ class HotThisWeek extends StatelessWidget {
                             color: Colors.white,
                             shadows: [
                               Shadow(
-                                color: Colors.black.withOpacity(0.7),
+                                color: Colors.black,
                                 blurRadius: 4,
                                 offset: Offset(1, 2),
                               ),
@@ -97,7 +97,7 @@ class HotThisWeek extends StatelessWidget {
                             fontSize: 30,
                             shadows: [
                               Shadow(
-                                color: Colors.black.withOpacity(0.7),
+                                color: Colors.black,
                                 blurRadius: 4,
                                 offset: Offset(1, 2),
                               ),
