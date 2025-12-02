@@ -108,10 +108,7 @@ class TopDishes extends StatelessWidget {
                 },
               ),
             ),
-
             SizedBox(height: 16),
-
-            // Dishes list
             Expanded(
               child: ListView.builder(
                 padding: EdgeInsets.symmetric(horizontal: 16),
