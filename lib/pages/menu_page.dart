@@ -3,11 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:menu_app/components/button.dart';
 import 'package:menu_app/components/food_tile.dart';
 import 'package:menu_app/model/shop.dart';
-import 'package:menu_app/pages/discount.dart';
-import 'package:menu_app/pages/favourite.dart';
+import 'package:menu_app/drawer/discount.dart';
+import 'package:menu_app/drawer/favourite.dart';
 import 'package:menu_app/pages/food_details.dart';
-import 'package:menu_app/pages/hot_this_week.dart';
-import 'package:menu_app/pages/top_dishes.dart';
+import 'package:menu_app/drawer/hot_this_week.dart';
+import 'package:menu_app/drawer/top_dishes.dart';
 import 'package:menu_app/theme/colors.dart';
 import 'package:provider/provider.dart';
 
