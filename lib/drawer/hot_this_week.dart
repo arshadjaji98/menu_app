@@ -69,9 +69,9 @@ class HotThisWeek extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    bottom: 25,
-                    left: 300,
-                    right: 40,
+                    bottom: 20,
+                    left: 230,
+                    right: 0,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -109,8 +109,10 @@ class HotThisWeek extends StatelessWidget {
                   ),
                   Positioned(
                     top: 16,
-                    right: 16,
+                    right: 10,
                     child: Container(
+                      width: 40,
+                      height: 40,
                       decoration: BoxDecoration(
                         color: Colors.white70,
                         shape: BoxShape.circle,
