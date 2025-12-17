@@ -5,14 +5,19 @@ import 'package:menu_app/responsive/responsive.dart';
 
 class HotThisWeek extends StatelessWidget {
   final List<Food> specialFoods = [
-    Food(name: "Baps", price: '32', imagePath: "asset/bap.png", rating: '4.5'),
-    Food(name: "Dosa", price: '18', imagePath: "asset/dosa.png", rating: '4.0'),
-    Food(name: "Pot", price: '28', imagePath: "asset/pot.png", rating: '4.8'),
+    Food(name: "Baps", price: '32', imagePath: "asset/bap.png", rating: '4.9+'),
+    Food(
+      name: "Dosa",
+      price: '18',
+      imagePath: "asset/dosa.png",
+      rating: '4.9+',
+    ),
+    Food(name: "Pot", price: '28', imagePath: "asset/pot.png", rating: '4.9+'),
     Food(
       name: "Maite",
       price: '30',
       imagePath: "asset/thai.png",
-      rating: '4.7',
+      rating: '4.9+',
     ),
   ];
 
