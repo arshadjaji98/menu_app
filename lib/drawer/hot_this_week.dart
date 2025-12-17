@@ -25,7 +25,7 @@ class HotThisWeek extends StatelessWidget {
       appBar: AppBar(
         foregroundColor: Colors.white,
         title: Text(
-          "Special Menu",
+          "Hot This Week",
           style: GoogleFonts.dmSerifDisplay(fontSize: 28, color: Colors.white),
         ),
         backgroundColor: Colors.red[400],
