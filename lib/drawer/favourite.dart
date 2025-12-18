@@ -54,7 +54,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    "Add some food to your favorites!",
+                    "Add food to your favorites!",
                     style: TextStyle(color: Colors.black54),
                   ),
                 ],
@@ -79,10 +79,6 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                     ],
                   ),
                   child: ListTile(
-                    contentPadding: EdgeInsets.symmetric(
-                      vertical: 12,
-                      horizontal: 16,
-                    ),
                     leading: ClipRRect(
                       borderRadius: BorderRadius.circular(12),
                       child: Image.asset(

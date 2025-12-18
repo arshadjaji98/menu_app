@@ -28,6 +28,7 @@ class HotThisWeek extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[50],
       appBar: AppBar(
+        centerTitle: true,
         foregroundColor: Colors.white,
         title: Text(
           "Hot This Week",

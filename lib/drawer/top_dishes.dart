@@ -53,7 +53,6 @@ class TopDishes extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            // Top bar
             Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 16.0,
@@ -66,21 +65,17 @@ class TopDishes extends StatelessWidget {
                     icon: Icon(Icons.arrow_back, size: 28),
                   ),
                   SizedBox(width: 8),
-                  Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Top Dishes",
-                      style: GoogleFonts.dmSerifDisplay(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                      ),
+                  Text(
+                    "Top Dishes",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.dmSerifDisplay(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ],
               ),
             ),
-
-            // Category chips
             Container(
               height: 40,
               padding: EdgeInsets.symmetric(horizontal: 16),
@@ -140,8 +135,6 @@ class TopDishes extends StatelessWidget {
                           ),
                         ),
                         SizedBox(width: 12),
-
-                        // Dish info
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
