@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:menu_app/theme/colors.dart';
 
 class Discount extends StatefulWidget {
   const Discount({super.key});
@@ -17,7 +18,7 @@ class _DiscountState extends State<Discount> {
       appBar: AppBar(
         foregroundColor: Colors.white,
         centerTitle: true,
-        backgroundColor: Colors.red.shade900,
+        backgroundColor: primaryColor,
         elevation: 0,
         title: Text(
           "Discounted Dishes",
@@ -40,7 +41,7 @@ class _DiscountState extends State<Discount> {
 
             const SizedBox(height: 16),
             _buildDiscountCard(
-              "Chicken Alfredo Pasta",
+              "Chicken Pasta",
               "18",
               "asset/pot.png",
               "45% OFF",
@@ -56,7 +57,7 @@ class _DiscountState extends State<Discount> {
 
             const SizedBox(height: 16),
             _buildDiscountCard(
-              "BBQ Grill Platter",
+              "QBB Ice Cream",
               "35",
               "asset/icecream.png",
               "50% OFF",
@@ -64,36 +65,26 @@ class _DiscountState extends State<Discount> {
 
             const SizedBox(height: 16),
             _buildDiscountCard(
-              "BBQ Grill Platter",
+              "Grilled Chicken",
               "35",
               "asset/chicken.png",
               "40% OFF",
             ),
 
             const SizedBox(height: 16),
-            _buildDiscountCard(
-              "BBQ Grill Platter",
-              "35",
-              "asset/bap.png",
-              "60% OFF",
-            ),
+            _buildDiscountCard("Latter Cake", "35", "asset/bap.png", "60% OFF"),
             const SizedBox(height: 16),
             _buildDiscountCard(
-              "BBQ Grill Platter",
+              "Latter Grill P",
               "35",
               "asset/thai.png",
               "20% OFF",
             ),
             const SizedBox(height: 16),
-            _buildDiscountCard(
-              "BBQ Grill Platter",
-              "35",
-              "asset/sushi.png",
-              "10% OFF",
-            ),
+            _buildDiscountCard("Platter", "35", "asset/sushi.png", "10% OFF"),
             const SizedBox(height: 16),
             _buildDiscountCard(
-              "BBQ Grill Platter",
+              "Grill Platter",
               "35",
               "asset/sushi (1).png",
               "40% OFF",
@@ -112,24 +103,71 @@ class _DiscountState extends State<Discount> {
     String offer,
   ) {
     return Container(
+      height: 130,
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.9),
-        borderRadius: BorderRadius.circular(18),
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 8,
+            offset: Offset(0, 4),
+          ),
+        ],
+        color: Colors.white,
       ),
       child: Row(
         children: [
-          ClipRRect(
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(18),
-              bottomLeft: Radius.circular(18),
-            ),
-            child: Image.asset(img, width: 110, height: 110, fit: BoxFit.cover),
+          Stack(
+            children: [
+              ClipRRect(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  bottomLeft: Radius.circular(20),
+                ),
+                child: Image.asset(
+                  img,
+                  width: 130,
+                  height: 130,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Positioned(
+                top: 8,
+                left: 8,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 6,
+                  ),
+                  decoration: BoxDecoration(
+                    color: primaryColor,
+                    borderRadius: BorderRadius.circular(14),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        blurRadius: 4,
+                        offset: Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: Text(
+                    offer,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     name,
@@ -137,33 +175,28 @@ class _DiscountState extends State<Discount> {
                       fontSize: 20,
                       color: Colors.black87,
                     ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                  const SizedBox(height: 6),
+                  SizedBox(height: 8),
                   Text(
                     "\$$price",
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.deepOrange,
+                      color: primaryColor,
                     ),
                   ),
-                  const SizedBox(height: 6),
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 8,
-                      vertical: 4,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.red.shade800,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Text(
-                      offer,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
+                  Spacer(),
+                  Row(
+                    children: [
+                      Icon(Icons.star, color: Colors.amber, size: 18),
+                      SizedBox(width: 4),
+                      Text(
+                        "4.9",
+                        style: TextStyle(fontSize: 14, color: Colors.grey[700]),
                       ),
-                    ),
+                    ],
                   ),
                 ],
               ),
