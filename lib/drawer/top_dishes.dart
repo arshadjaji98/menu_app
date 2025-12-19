@@ -53,32 +53,25 @@ class TopDishes extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 16.0,
-                vertical: 12,
-              ),
-              child: Row(
-                children: [
-                  IconButton(
-                    onPressed: () => Navigator.pop(context),
-                    icon: Icon(Icons.arrow_back, size: 28),
+            Row(
+              children: [
+                IconButton(
+                  onPressed: () => Navigator.pop(context),
+                  icon: Icon(Icons.arrow_back, size: 28),
+                ),
+                SizedBox(width: 120),
+                Text(
+                  "Top Dishes",
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.dmSerifDisplay(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
                   ),
-                  SizedBox(width: 8),
-                  Text(
-                    "Top Dishes",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.dmSerifDisplay(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
             Container(
               height: 40,
-              padding: EdgeInsets.symmetric(horizontal: 16),
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: categories.length,

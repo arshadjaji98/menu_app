@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menu_app/components/button.dart';
@@ -27,7 +28,9 @@ class _MenuPageState extends State<MenuPage> {
   Widget build(BuildContext context) {
     final shop = context.read<Shop>();
     final foodMenu = shop.foodMenu;
-    print("Parent favoriteFoods: $favoriteFoods");
+    if (kDebugMode) {
+      print("Parent favoriteFoods: $favoriteFoods");
+    }
     return Scaffold(
       drawer: Drawer(
         backgroundColor: Colors.grey[300],
@@ -223,7 +226,7 @@ class _MenuPageState extends State<MenuPage> {
                 ),
                 SizedBox(height: 20),
                 Container(
-                  margin: EdgeInsets.only(left: 10, right: 10, top: 10),
+                  margin: EdgeInsets.only(left: 20, right: 20, top: 10),
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     color: Colors.grey[100],
@@ -266,7 +269,7 @@ class _MenuPageState extends State<MenuPage> {
                     });
                   },
                   child: Container(
-                    margin: EdgeInsets.only(left: 10, right: 10, top: 20),
+                    margin: EdgeInsets.only(left: 20, right: 20, top: 20),
                     padding: EdgeInsets.all(20),
                     decoration: BoxDecoration(
                       color: Colors.grey[100],
@@ -306,7 +309,7 @@ class _MenuPageState extends State<MenuPage> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(left: 10, right: 10, top: 20),
+                  margin: EdgeInsets.only(left: 20, right: 20, top: 20),
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     color: Colors.grey[100],

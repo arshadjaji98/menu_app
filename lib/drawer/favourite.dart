@@ -31,7 +31,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
       appBar: AppBar(
         foregroundColor: Colors.white,
         title: Text(
-          "Favorites",
+          "Saved Dsishes",
           style: GoogleFonts.dmSerifDisplay(fontSize: 26, color: Colors.white),
         ),
         backgroundColor: Colors.red[900],

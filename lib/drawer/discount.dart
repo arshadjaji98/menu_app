@@ -13,15 +13,18 @@ class _DiscountState extends State<Discount> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      backgroundColor: Colors.grey[50],
+      backgroundColor: Colors.grey[300],
       appBar: AppBar(
         foregroundColor: Colors.white,
         centerTitle: true,
-        backgroundColor: Colors.teal[700],
+        backgroundColor: Colors.red.shade900,
         elevation: 0,
         title: Text(
           "Discounted Dishes",
-          style: GoogleFonts.dmSerifDisplay(color: Colors.white, fontSize: 26),
+          style: GoogleFonts.dmSerifDisplay(
+            color: Colors.grey[100],
+            fontSize: 26,
+          ),
         ),
       ),
       body: Padding(
@@ -95,12 +98,6 @@ class _DiscountState extends State<Discount> {
               "asset/sushi (1).png",
               "40% OFF",
             ),
-            _buildDiscountCard(
-              "BBQ Grill Platter",
-              "35",
-              "asset/sushi (1).png",
-              "70% OFF",
-            ),
             const SizedBox(height: 16),
           ],
         ),
@@ -157,7 +154,7 @@ class _DiscountState extends State<Discount> {
                       vertical: 4,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.red[300],
+                      color: Colors.red.shade800,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Text(
