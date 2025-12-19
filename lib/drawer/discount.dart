@@ -139,6 +139,7 @@ class _DiscountState extends State<Discount> {
                   decoration: BoxDecoration(
                     color: primaryColor,
                     borderRadius: BorderRadius.circular(14),
+                    boxShadow: [BoxShadow(blurRadius: 4, offset: Offset(0, 2))],
                   ),
                   child: Text(
                     offer,
