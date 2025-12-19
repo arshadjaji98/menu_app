@@ -59,7 +59,7 @@ class TopDishes extends StatelessWidget {
                   onPressed: () => Navigator.pop(context),
                   icon: Icon(Icons.arrow_back, size: 28),
                 ),
-                SizedBox(width: 120),
+                SizedBox(width: 100),
                 Text(
                   "Top Dishes",
                   textAlign: TextAlign.center,
