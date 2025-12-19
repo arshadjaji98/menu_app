@@ -54,7 +54,7 @@ class _IntroPageState extends State<IntroPage> {
                   color: Colors.grey[300],
                 ),
               ),
-              SizedBox(height: 25),
+              SizedBox(height: 50),
               MyButton(
                 text: "Get Started",
                 onTap: () {
