@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menu_app/model/food.dart';
+import 'package:menu_app/theme/colors.dart';
 
 class FavoriteScreen extends StatefulWidget {
   final Set<String> favoriteFoods;
@@ -34,7 +35,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
           "Saved Dsishes",
           style: GoogleFonts.dmSerifDisplay(fontSize: 26, color: Colors.white),
         ),
-        backgroundColor: Colors.red[900],
+        backgroundColor: primaryColor,
         centerTitle: true,
         elevation: 4,
       ),
@@ -43,7 +44,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.favorite_border, size: 80, color: Colors.red[900]),
+                  Icon(Icons.favorite_border, size: 80, color: primaryColor),
                   SizedBox(height: 16),
                   Text(
                     "No favorites yet",

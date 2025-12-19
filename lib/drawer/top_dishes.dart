@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menu_app/model/food.dart';
+import 'package:menu_app/theme/colors.dart';
 
 class TopDishes extends StatelessWidget {
   final List<Food> topDishes = [
@@ -49,53 +50,19 @@ class TopDishes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: primaryColor,
+        centerTitle: true,
+        foregroundColor: Colors.white,
+        title: Text(
+          "Top Dishes",
+          style: GoogleFonts.dmSerifDisplay(fontSize: 28, color: Colors.white),
+        ),
+      ),
       backgroundColor: Colors.grey[300],
       body: SafeArea(
         child: Column(
           children: [
-            Row(
-              children: [
-                IconButton(
-                  onPressed: () => Navigator.pop(context),
-                  icon: Icon(Icons.arrow_back, size: 28),
-                ),
-                SizedBox(width: 100),
-                Text(
-                  "Top Dishes",
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.dmSerifDisplay(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-            Container(
-              height: 40,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: categories.length,
-                itemBuilder: (context, index) {
-                  return Container(
-                    margin: EdgeInsets.only(right: 8),
-                    child: Chip(
-                      label: Text(
-                        categories[index],
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.grey[100],
-                        ),
-                      ),
-                      backgroundColor: Colors.red[800],
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 6,
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
             SizedBox(height: 16),
             Expanded(
               child: ListView.builder(
@@ -104,6 +71,7 @@ class TopDishes extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final food = topDishes[index];
                   return Container(
+                    padding: EdgeInsets.all(8),
                     margin: EdgeInsets.only(bottom: 16),
                     decoration: BoxDecoration(
                       color: Colors.grey[100],
@@ -163,14 +131,14 @@ class TopDishes extends StatelessWidget {
                                 style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.deepOrange,
+                                  color: primaryColor,
                                 ),
                               ),
                               SizedBox(height: 6),
                               ElevatedButton(
                                 onPressed: () {},
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.red[800],
+                                  backgroundColor: primaryColor,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(12),
                                   ),

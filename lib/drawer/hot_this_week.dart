@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menu_app/model/food.dart';
 import 'package:menu_app/responsive/responsive.dart';
+import 'package:menu_app/theme/colors.dart';
 
 class HotThisWeek extends StatelessWidget {
   final List<Food> specialFoods = [
@@ -34,7 +35,7 @@ class HotThisWeek extends StatelessWidget {
           "Hot This Week",
           style: GoogleFonts.dmSerifDisplay(fontSize: 28, color: Colors.white),
         ),
-        backgroundColor: Colors.red[400],
+        backgroundColor: primaryColor,
       ),
       body: WebResponsive(
         child: ListView.builder(
