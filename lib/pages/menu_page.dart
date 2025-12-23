@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menu_app/components/button.dart';
@@ -28,9 +27,6 @@ class _MenuPageState extends State<MenuPage> {
   Widget build(BuildContext context) {
     final shop = context.read<Shop>();
     final foodMenu = shop.foodMenu;
-    if (kDebugMode) {
-      print("Parent favoriteFoods: $favoriteFoods");
-    }
     return Scaffold(
       drawer: Drawer(
         backgroundColor: Colors.grey[300],
