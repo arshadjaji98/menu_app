@@ -141,10 +141,7 @@ class _CartState extends State<Cart> {
                   ),
                 )
               else
-                const Padding(
-                  padding: EdgeInsets.all(10),
-                  child: CircularProgressIndicator(),
-                ),
+                CircularProgressIndicator(),
             ],
           ),
         );
