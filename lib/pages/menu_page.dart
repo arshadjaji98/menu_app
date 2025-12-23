@@ -127,184 +127,133 @@ class _MenuPageState extends State<MenuPage> {
           ),
         ),
       ),
-      body: SafeArea(
-        child: Stack(
-          children: [
-            ListView(
-              padding: EdgeInsets.symmetric(vertical: 8),
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: primaryColor,
-                  ),
-                  margin: EdgeInsets.symmetric(horizontal: 25),
-                  padding: EdgeInsets.all(25),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "SPECIAL MENU",
-                            style: GoogleFonts.dmSerifDisplay(
-                              color: Colors.white,
-                              fontSize: 20,
-                            ),
-                          ),
-                          SizedBox(height: 20),
-                          MyButton(
-                            text: "Checkout",
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => HotThisWeek(),
-                                ),
-                              );
-                            },
-                          ),
-                        ],
-                      ),
-                      Image.asset("asset/sushi (3).png", height: 100),
-                    ],
-                  ),
+      body: Stack(
+        children: [
+          ListView(
+            padding: EdgeInsets.symmetric(vertical: 8),
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: primaryColor,
                 ),
-                SizedBox(height: 25),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      hintText: "Search here....",
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
-                        borderRadius: BorderRadius.circular(20),
+                margin: EdgeInsets.symmetric(horizontal: 25),
+                padding: EdgeInsets.all(25),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "SPECIAL MENU",
+                      style: GoogleFonts.dmSerifDisplay(
+                        color: Colors.white,
+                        fontSize: 20,
                       ),
                     ),
-                  ),
-                ),
-                SizedBox(height: 25),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 25),
-                  child: Text(
-                    "Food Menu",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey[800],
-                    ),
-                  ),
-                ),
-                SizedBox(height: 10),
-                SizedBox(
-                  height: 250,
-                  child: ListView.builder(
-                    padding: EdgeInsets.zero,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: foodMenu.length,
-                    itemBuilder: (context, index) => Padding(
-                      padding: const EdgeInsets.only(right: 12.0),
-                      child: FoodTile(
-                        food: foodMenu[index],
-                        onTap: () {
-                          setState(() {
-                            selectedFoodIndex = index;
-                          });
-                        },
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20),
-                Container(
-                  margin: EdgeInsets.only(left: 20, right: 20, top: 10),
-                  padding: EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    color: Colors.grey[100],
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Image.asset("asset/sushi.png", height: 60),
-                          SizedBox(width: 10),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Salmon Eggs ",
-                                style: GoogleFonts.dmSerifDisplay(fontSize: 18),
-                              ),
-                              Text(
-                                "\$26",
-                                style: TextStyle(color: Colors.grey[700]),
-                              ),
-                            ],
+                    SizedBox(height: 20),
+                    MyButton(
+                      text: "Checkout",
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HotThisWeek(),
                           ),
-                        ],
-                      ),
-                      Icon(
-                        Icons.favorite_outline,
-                        color: Colors.grey,
-                        size: 28,
-                      ),
-                    ],
-                  ),
+                        );
+                      },
+                    ),
+                  ],
                 ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      selectedFoodIndex = 1;
-                    });
-                  },
-                  child: Container(
-                    margin: EdgeInsets.only(left: 20, right: 20, top: 20),
-                    padding: EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      color: Colors.grey[100],
+              ),
+              SizedBox(height: 25),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: TextField(
+                  decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey),
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    hintText: "Search here....",
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 25),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 25),
+                child: Text(
+                  "Food Menu",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey[800],
+                  ),
+                ),
+              ),
+              SizedBox(height: 10),
+              SizedBox(
+                height: 250,
+                child: ListView.builder(
+                  padding: EdgeInsets.zero,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: foodMenu.length,
+                  itemBuilder: (context, index) => Padding(
+                    padding: const EdgeInsets.only(right: 12.0),
+                    child: FoodTile(
+                      food: foodMenu[index],
+                      onTap: () {
+                        setState(() {
+                          selectedFoodIndex = index;
+                        });
+                      },
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              Container(
+                margin: EdgeInsets.only(left: 20, right: 20, top: 10),
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.grey[100],
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
                       children: [
-                        Row(
+                        Image.asset("asset/sushi.png", height: 60),
+                        SizedBox(width: 10),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Image.asset("asset/sushi (1).png", height: 60),
-                            SizedBox(width: 10),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Soup Noodles",
-                                  style: GoogleFonts.dmSerifDisplay(
-                                    fontSize: 18,
-                                  ),
-                                ),
-                                Text(
-                                  "\$11",
-                                  style: TextStyle(color: Colors.grey[700]),
-                                ),
-                              ],
+                            Text(
+                              "Salmon Eggs ",
+                              style: GoogleFonts.dmSerifDisplay(fontSize: 18),
+                            ),
+                            Text(
+                              "\$26",
+                              style: TextStyle(color: Colors.grey[700]),
                             ),
                           ],
                         ),
-                        Icon(
-                          Icons.favorite_outline,
-                          color: Colors.grey,
-                          size: 28,
-                        ),
                       ],
                     ),
-                  ),
+                    Icon(Icons.favorite_outline, color: Colors.grey, size: 28),
+                  ],
                 ),
-                Container(
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    selectedFoodIndex = 1;
+                  });
+                },
+                child: Container(
                   margin: EdgeInsets.only(left: 20, right: 20, top: 20),
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
@@ -316,17 +265,17 @@ class _MenuPageState extends State<MenuPage> {
                     children: [
                       Row(
                         children: [
-                          Image.asset("asset/sushi (3).png", height: 60),
+                          Image.asset("asset/sushi (1).png", height: 60),
                           SizedBox(width: 10),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Salmon Cheeze ",
+                                "Soup Noodles",
                                 style: GoogleFonts.dmSerifDisplay(fontSize: 18),
                               ),
                               Text(
-                                "\$21",
+                                "\$11",
                                 style: TextStyle(color: Colors.grey[700]),
                               ),
                             ],
@@ -341,120 +290,153 @@ class _MenuPageState extends State<MenuPage> {
                     ],
                   ),
                 ),
-              ],
-            ),
-            if (selectedFoodIndex != null)
-              Positioned.fill(
-                child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      selectedFoodIndex = null;
-                    });
-                  },
-                  child: Container(
-                    color: Colors.black54,
-                    alignment: Alignment.center,
-                    child: GestureDetector(
-                      child: Container(
-                        width: 350,
-                        padding: EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.grey[100],
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Image.asset("asset/sushi (3).png", height: 60),
+                        SizedBox(width: 10),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                IconButton(
-                                  padding: EdgeInsets.zero,
-                                  constraints: BoxConstraints(),
-                                  icon: Icon(
-                                    favoriteFoods.contains(
-                                          foodMenu[selectedFoodIndex!].name,
-                                        )
-                                        ? Icons.favorite
-                                        : Icons.favorite_outline,
-                                  ),
-
-                                  onPressed: () {
-                                    final foodName =
-                                        foodMenu[selectedFoodIndex!].name;
-                                    setState(() {
-                                      if (favoriteFoods.contains(foodName)) {
-                                        favoriteFoods.remove(foodName);
-                                      } else {
-                                        favoriteFoods.add(foodName);
-                                      }
-                                    });
-                                  },
-                                ),
-                                Container(
-                                  width: 30,
-                                  height: 30,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Colors.grey.shade400,
-                                    ),
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  child: IconButton(
-                                    padding: EdgeInsets.zero,
-                                    constraints: BoxConstraints(),
-                                    icon: Icon(Icons.close, size: 18),
-                                    onPressed: () {
-                                      selectedFoodIndex = null;
-                                      setState(() {});
-                                    },
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Image.asset(
-                              foodMenu[selectedFoodIndex!].imagePath,
-                              height: 150,
-                            ),
-                            SizedBox(height: 10),
                             Text(
-                              foodMenu[selectedFoodIndex!].name,
-                              style: GoogleFonts.dmSerifDisplay(fontSize: 20),
+                              "Salmon Cheeze ",
+                              style: GoogleFonts.dmSerifDisplay(fontSize: 18),
                             ),
-                            SizedBox(height: 10),
                             Text(
-                              "\$${foodMenu[selectedFoodIndex!].price}",
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.grey[700],
-                              ),
-                            ),
-                            SizedBox(height: 20),
-                            MyButton(
-                              text: "View Details",
-                              onTap: () {
-                                final index = selectedFoodIndex!;
-                                setState(() {
-                                  selectedFoodIndex = null;
-                                });
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        FoodDetailsPage(food: foodMenu[index]),
-                                  ),
-                                );
-                              },
+                              "\$21",
+                              style: TextStyle(color: Colors.grey[700]),
                             ),
                           ],
                         ),
+                      ],
+                    ),
+                    Icon(Icons.favorite_outline, color: Colors.grey, size: 28),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          if (selectedFoodIndex != null)
+            Positioned.fill(
+              child: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    selectedFoodIndex = null;
+                  });
+                },
+                child: Container(
+                  color: Colors.black54,
+                  alignment: Alignment.center,
+                  child: GestureDetector(
+                    child: Container(
+                      width: 350,
+                      padding: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              IconButton(
+                                padding: EdgeInsets.zero,
+                                constraints: BoxConstraints(),
+                                icon: Icon(
+                                  favoriteFoods.contains(
+                                        foodMenu[selectedFoodIndex!].name,
+                                      )
+                                      ? Icons.favorite
+                                      : Icons.favorite_outline,
+                                ),
+
+                                onPressed: () {
+                                  final foodName =
+                                      foodMenu[selectedFoodIndex!].name;
+                                  setState(() {
+                                    if (favoriteFoods.contains(foodName)) {
+                                      favoriteFoods.remove(foodName);
+                                    } else {
+                                      favoriteFoods.add(foodName);
+                                    }
+                                  });
+                                },
+                              ),
+                              Container(
+                                width: 30,
+                                height: 30,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Colors.grey.shade400,
+                                  ),
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                child: IconButton(
+                                  padding: EdgeInsets.zero,
+                                  constraints: BoxConstraints(),
+                                  icon: Icon(Icons.close, size: 18),
+                                  onPressed: () {
+                                    selectedFoodIndex = null;
+                                    setState(() {});
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                          Image.asset(
+                            foodMenu[selectedFoodIndex!].imagePath,
+                            height: 150,
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            foodMenu[selectedFoodIndex!].name,
+                            style: GoogleFonts.dmSerifDisplay(fontSize: 20),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "\$${foodMenu[selectedFoodIndex!].price}",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.grey[700],
+                            ),
+                          ),
+                          SizedBox(height: 20),
+                          MyButton(
+                            text: "View Details",
+                            onTap: () {
+                              final index = selectedFoodIndex!;
+                              setState(() {
+                                selectedFoodIndex = null;
+                              });
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      FoodDetailsPage(food: foodMenu[index]),
+                                ),
+                              );
+                            },
+                          ),
+                        ],
                       ),
                     ),
                   ),
                 ),
               ),
-          ],
-        ),
+            ),
+        ],
       ),
     );
   }
