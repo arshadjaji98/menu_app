@@ -77,7 +77,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                 SizedBox(height: 25),
                 Row(
                   children: [
-                    Icon(Icons.star, color: Colors.amber),
+                    Icon(Icons.star, color: Colors.amber, size: 20),
                     SizedBox(width: 5),
                     Text(widget.food.rating),
                   ],
@@ -89,20 +89,20 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                 SizedBox(height: 25),
                 Text(
                   "Description",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey[900],
+                  style: GoogleFonts.dmSerifDisplay(
                     fontSize: 18,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 25),
+                SizedBox(height: 20),
                 Text(
                   "Delicate slice fresh drapes elegantly over a pellow of perfectcly season sushi rice. Made only for chineese and american and other asian, becaues other can eat this too, and others can like this too it is a good food and not good either",
-                  style: TextStyle(
-                    color: Colors.grey[600],
-                    fontSize: 14,
+                  style: GoogleFonts.cabin(
+                    fontSize: 13,
+                    color: Colors.grey[500],
                     height: 1.8,
                   ),
+                  textAlign: TextAlign.justify,
                 ),
               ],
             ),
