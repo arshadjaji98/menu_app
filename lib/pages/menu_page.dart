@@ -38,7 +38,7 @@ class _MenuPageState extends State<MenuPage> {
               child: Align(
                 alignment: Alignment.center,
                 child: Text(
-                  'Menu App',
+                  'Menu',
                   style: GoogleFonts.dmSerifDisplay(
                     color: Colors.white,
                     fontSize: 24,
